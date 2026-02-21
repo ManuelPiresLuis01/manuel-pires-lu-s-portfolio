@@ -1,5 +1,46 @@
-﻿import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { ArrowDown, Mail } from "lucide-react";
+
+const binaryColumn = `0
+1
+0
+1
+1
+0
+1
+0
+0
+1
+0
+1
+1
+0
+1
+0
+0
+1
+0
+1
+1
+0
+1
+0
+0
+1
+0
+1
+1
+0
+1
+0
+0
+1
+0
+1
+1
+0`;
+
+const columns = Array.from({ length: 18 }, (_, index) => index);
 
 const Hero = () => (
   <section className="relative min-h-screen flex items-center section-padding pt-32">
@@ -12,6 +53,23 @@ const Hero = () => (
         backgroundSize: "60px 60px",
       }}
     />
+
+    {/* Binary rain */}
+    <div className="binary-rain" aria-hidden="true">
+      {columns.map((index) => (
+        <span
+          key={index}
+          className="binary-column"
+          style={{
+            left: `${index * 5.5}%`,
+            animationDelay: `${-index * 0.6}s`,
+            animationDuration: `${8 + (index % 6)}s`,
+          }}
+        >
+          {binaryColumn}
+        </span>
+      ))}
+    </div>
 
     {/* Glow blob */}
     <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px] pointer-events-none" />

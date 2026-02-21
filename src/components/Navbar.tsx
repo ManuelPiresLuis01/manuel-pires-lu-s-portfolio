@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDown } from "lucide-react";
+import { motion } from "framer-motion";
 
 const links = [
   { href: "#sobre", label: "Sobre" },
@@ -12,15 +12,37 @@ const links = [
   { href: "#contato", label: "Contato" },
 ];
 
+const HEADER_OFFSET = 72;
+
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handler);
     return () => window.removeEventListener("scroll", handler);
   }, []);
+
+  const handleNavClick = (event: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (!href.startsWith("#")) {
+      return;
+    }
+
+    event.preventDefault();
+    const target = document.querySelector(href);
+
+    if (!target) {
+      return;
+    }
+
+    const targetTop = target.getBoundingClientRect().top + window.scrollY - HEADER_OFFSET;
+    window.scrollTo({ top: targetTop, behavior: "smooth" });
+    window.history.replaceState(null, "", href);
+  };
+
+  const handleScrollHint = () => {
+    window.scrollTo({ top: window.innerHeight * 0.9, behavior: "smooth" });
+  };
 
   return (
     <motion.nav
@@ -31,7 +53,7 @@ const Navbar = () => {
         scrolled ? "glass shadow-glow-sm" : "bg-transparent"
       }`}
     >
-      <div className="container-custom flex items-center justify-between h-16">
+      <div className="container-custom flex items-center justify-between h-16 px-4 md:px-0">
         <a href="#" className="text-xl font-bold text-gradient">MPL</a>
         
         {/* Desktop */}
@@ -40,6 +62,7 @@ const Navbar = () => {
             <a
               key={l.href}
               href={l.href}
+              onClick={(event) => handleNavClick(event, l.href)}
               className="text-sm text-muted-foreground hover:text-primary transition-colors"
             >
               {l.label}
@@ -47,36 +70,23 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Mobile toggle */}
-        <button onClick={() => setOpen(!open)} className="md:hidden text-foreground">
-          {open ? <X size={24} /> : <Menu size={24} />}
+        {/* Mobile scroll hint */}
+        <button
+          type="button"
+          onClick={handleScrollHint}
+          className="md:hidden inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+          aria-label="Role para ver as seções"
+        >
+          <span>Role</span>
+          <motion.span
+            animate={{ y: [0, 6, 0] }}
+            transition={{ duration: 1.6, repeat: Infinity }}
+            className="text-primary"
+          >
+            <ChevronDown size={18} />
+          </motion.span>
         </button>
       </div>
-
-      {/* Mobile menu */}
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden glass overflow-hidden"
-          >
-            <div className="flex flex-col gap-4 p-6">
-              {links.map((l) => (
-                <a
-                  key={l.href}
-                  href={l.href}
-                  onClick={() => setOpen(false)}
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  {l.label}
-                </a>
-              ))}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </motion.nav>
   );
 };
