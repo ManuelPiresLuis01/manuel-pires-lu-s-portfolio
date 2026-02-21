@@ -1,6 +1,7 @@
 import { FadeIn, SectionTitle } from "./shared";
 import { ExternalLink, Shield, Monitor, Bug } from "lucide-react";
 import mambooImg from "@/assets/mamboo.jpg";
+import foto1 from "@/assets/foto1.jpg";
 
 const CorporateProjects = () => (
   <section id="experiencia" className="section-padding bg-surface">
@@ -64,29 +65,36 @@ const CorporateProjects = () => (
       {/* AGT */}
       <FadeIn delay={0.2}>
         <div className="p-6 md:p-8 rounded-xl bg-card border border-border">
-          <div className="flex items-center gap-3 mb-4">
-            <Shield className="w-6 h-6 text-primary" />
-            <h3 className="text-xl font-bold">SIGT – AGT 4.0</h3>
-          </div>
-          <p className="text-sm text-muted-foreground mb-4">
-            Atuação na automação de testes no Sistema Integrado de Gestão Tributária da Administração Geral Tributária.
-          </p>
-          <a href="https://portaldocontribuinte.minfin.gov.ao/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-sm inline-flex items-center gap-1 mb-4">
-            Portal do Contribuinte <ExternalLink size={12} />
-          </a>
-
-          <div className="grid sm:grid-cols-2 gap-4 mt-4">
-            {[
-              "Automação de testes com Playwright",
-              "Testes de regressão",
-              "Garantia de estabilidade do sistema",
-              "Revisões técnicas",
-            ].map((r) => (
-              <div key={r} className="flex items-start gap-2 text-sm text-muted-foreground">
-                <Bug className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                {r}
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="md:col-span-2">
+              <div className="flex items-center gap-3 mb-4">
+                <Shield className="w-6 h-6 text-primary" />
+                <h3 className="text-xl font-bold">SIGT – AGT 4.0</h3>
+                <a href="https://portaldocontribuinte.minfin.gov.ao/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-sm inline-flex items-center gap-1">
+                  Portal do Contribuinte <ExternalLink size={12} />
+                </a>
               </div>
-            ))}
+              <p className="text-sm text-muted-foreground mb-4">
+                Atuação na automação de testes no Sistema Integrado de Gestão Tributária da Administração Geral Tributária.
+              </p>
+
+              <div className="grid sm:grid-cols-2 gap-4 mt-4">
+                {[
+                  "Automação de testes com Playwright",
+                  "Testes de regressão",
+                  "Garantia de estabilidade do sistema",
+                  "Revisões técnicas",
+                ].map((r) => (
+                  <div key={r} className="flex items-start gap-2 text-sm text-muted-foreground">
+                    <Bug className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                    {r}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="rounded-xl overflow-hidden border border-border flex items-center justify-center bg-background">
+              <img src={foto1} alt="Manuel - Portal do Contribuinte" className="w-full h-auto object-contain" />
+            </div>
           </div>
         </div>
       </FadeIn>

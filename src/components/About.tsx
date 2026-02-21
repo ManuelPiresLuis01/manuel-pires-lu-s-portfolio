@@ -11,7 +11,7 @@ const About = () => (
       <div className="grid md:grid-cols-2 gap-12 items-center">
         <FadeIn>
           <div className="rounded-2xl overflow-hidden border border-border shadow-glow-sm">
-            <img src={foto1} alt="Manuel no escritório" className="w-full h-[400px] object-cover" />
+            <img src={foto1} alt="Manuel no escritório" className="w-full h-auto object-contain" />
           </div>
         </FadeIn>
 
