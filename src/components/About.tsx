@@ -1,5 +1,5 @@
-import { FadeIn, SectionTitle } from "./shared";
-import foto1 from "@/assets/foto1.jpg";
+﻿import { FadeIn, SectionTitle } from "./shared";
+import fotoPerfil from "@/assets/foto-perfil.jpg";
 
 const About = () => (
   <section id="sobre" className="section-padding">
@@ -9,9 +9,14 @@ const About = () => (
       </SectionTitle>
 
       <div className="grid md:grid-cols-2 gap-12 items-center">
-        <FadeIn>
-          <div className="rounded-2xl overflow-hidden border border-border shadow-glow-sm">
-            <img src={foto1} alt="Manuel no escritório" className="w-full h-auto object-contain" />
+        <FadeIn delay={0.1}>
+          <div className="flex justify-center md:justify-start">
+            <div className="relative">
+              <div className="w-56 h-56 md:w-72 md:h-72 rounded-full overflow-hidden border-2 border-primary/20 shadow-glow">
+                <img src={fotoPerfil} alt="Manuel Pires Lui­s" className="w-full h-full object-cover" />
+              </div>
+              <div className="absolute -bottom-2 -right-2 w-full h-full rounded-full border border-primary/10 -z-10" />
+            </div>
           </div>
         </FadeIn>
 
@@ -36,7 +41,10 @@ const About = () => (
 
             <div className="flex flex-wrap gap-3 pt-4">
               {["React", "TypeScript", "Node.js", "Playwright", "Scrum"].map((t) => (
-                <span key={t} className="px-3 py-1 text-xs font-mono bg-primary/10 text-primary rounded-full border border-primary/20">
+                <span
+                  key={t}
+                  className="px-3 py-1 text-xs font-mono bg-primary/10 text-primary rounded-full border border-primary/20"
+                >
                   {t}
                 </span>
               ))}
