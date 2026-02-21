@@ -14,8 +14,8 @@ const Hero = () => (
     <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px] pointer-events-none" />
 
     <div className="container-custom relative z-10">
-      <div className="grid md:grid-cols-2 gap-12 items-center">
-        <div>
+        <div className="grid md:grid-cols-2 gap-12 items-center text-center md:text-left">
+        <div className="order-2 md:order-1">
           <motion.p
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -48,7 +48,7 @@ const Hero = () => (
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7 }}
-            className="flex flex-wrap gap-4"
+            className="flex flex-wrap gap-4 justify-center md:justify-start"
           >
             <a
               href="#experiencia"
@@ -71,13 +71,13 @@ const Hero = () => (
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.4, duration: 0.8 }}
-          className="flex justify-center"
+          className="flex justify-center order-1 md:order-2"
         >
           <div className="relative">
-            <div className="w-72 h-72 md:w-96 md:h-96 rounded-2xl overflow-hidden border-2 border-primary/20 shadow-glow">
+            <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-2 border-primary/20 shadow-glow">
               <img src={fotoPerfil} alt="Manuel Pires Luís" className="w-full h-full object-cover" />
             </div>
-            <div className="absolute -bottom-3 -right-3 w-full h-full rounded-2xl border border-primary/10 -z-10" />
+            <div className="absolute -bottom-2 -right-2 w-full h-full rounded-full border border-primary/10 -z-10" />
           </div>
         </motion.div>
       </div>
