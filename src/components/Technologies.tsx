@@ -2,8 +2,7 @@ import { FadeIn, SectionTitle } from "./shared";
 
 const categories = [
   {
-    label: "Frontend",
-    techs: ["React", "TypeScript", "HTML5", "CSS3", "Styled Components", "Tailwind"],
+    label: "Frontend", techs: ["React", "TypeScript", "HTML5", "CSS3", "Styled Components", "Tailwind"],
   },
   { label: "Backend", techs: ["Node.js", "Express"] },
   { label: "Banco de Dados", techs: ["MySQL", "MongoDB"] },
