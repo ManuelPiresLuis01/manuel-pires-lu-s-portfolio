@@ -1,10 +1,16 @@
-import { FadeIn, SectionTitle } from "./shared";
+﻿import { FadeIn, SectionTitle } from "./shared";
 import { Trophy } from "lucide-react";
 import aocpc1 from "@/assets/aocpc1.jpg";
 import aocpc2 from "@/assets/aocpc2.jpg";
 import aocpc3 from "@/assets/aocpc3.jpg";
+import devfestLuanda from "@/assets/devfest.jpg";
 
 const achievements = [
+  {
+    title: "DevFest Angola 2025",
+    desc: "Palestra: Testes de Software na Prática — a importância para garantir qualidade antes do deploy (GDG Angola)",
+    img: devfestLuanda,
+  },
   { title: "3º Lugar – ICPC 2025", desc: "Angolan Collegiate Programming Contest", img: aocpc3 },
   { title: "Troféu AOCPC 2025", desc: "3º Classificado no concurso universitário de programação", img: aocpc2 },
   { title: "AOCPC 2025 – Equipe", desc: "Participação com equipe no evento em Luanda", img: aocpc1 },

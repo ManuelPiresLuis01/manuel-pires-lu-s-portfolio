@@ -1,7 +1,5 @@
-import { FadeIn, SectionTitle } from "./shared";
+﻿import { FadeIn, SectionTitle } from "./shared";
 import { ExternalLink, Shield, Monitor, Bug } from "lucide-react";
-import mambooImg from "@/assets/mamboo.jpg";
-import foto1 from "@/assets/foto1.jpg";
 
 const CorporateProjects = () => (
   <section id="experiencia" className="section-padding bg-surface">
@@ -10,126 +8,200 @@ const CorporateProjects = () => (
         Projetos Corporativos
       </SectionTitle>
 
-      {/* Yetuedu */}
-      <FadeIn>
-        <div className="mb-10 p-6 md:p-8 rounded-xl bg-card border border-border">
-          <div className="flex items-center gap-3 mb-4">
-            <Monitor className="w-6 h-6 text-primary" />
-            <h3 className="text-xl font-bold">Yetuedu</h3>
-            <a href="https://www.yetuedu.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-sm inline-flex items-center gap-1">
-              Visitar <ExternalLink size={12} />
-            </a>
+      <div className="grid gap-6 lg:grid-cols-2">
+        {/* Yetuedu */}
+        <FadeIn>
+          <div className="h-full rounded-2xl border border-border/70 bg-card/80 p-6 md:p-7 shadow-sm transition hover:shadow-md">
+            <div className="flex flex-wrap items-center gap-3 mb-4">
+              <div className="flex items-center gap-3">
+                <Monitor className="w-6 h-6 text-primary" />
+                <h3 className="text-xl font-bold">Yetuedu</h3>
+              </div>
+              <a
+                href="https://www.yetuedu.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline text-sm inline-flex items-center gap-1"
+              >
+                Visitar <ExternalLink size={12} />
+              </a>
+            </div>
+            <p className="text-muted-foreground text-sm leading-relaxed">
+              Plataforma educacional com foco em qualidade, experiência do
+              utilizador e evolução contínua do produto.
+            </p>
+            <div className="grid gap-2 text-xs uppercase tracking-[0.2em] text-muted-foreground mt-5">
+              Responsabilidades
+            </div>
+            <div className="grid sm:grid-cols-2 gap-3 mt-3">
+              {
+                [
+                  "Garantia de qualidade e testes funcionais",
+                  "Acompanhamento de bugs e melhorias",
+                  "Colaboração com produto e design",
+                  "Aprimoramento contínuo da experiência do utilizador"
+                ].map((r) => (
+                  <div
+                    key={r}
+                    className="flex items-start gap-2 text-sm text-muted-foreground"
+                  >
+                    <Bug className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                    {r}
+                  </div>
+                ))
+              }
+            </div>
           </div>
-          <p className="text-muted-foreground text-sm">Plataforma educacional com foco em qualidade e experiência do utilizador.</p>
-        </div>
-      </FadeIn>
+        </FadeIn>
 
-      {/* Mamboo */}
-      <FadeIn delay={0.1}>
-        <div className="mb-10 p-6 md:p-8 rounded-xl bg-card border border-border">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="md:col-span-2">
-              <div className="flex items-center gap-3 mb-4">
+        {/* Mamboo */}
+        <FadeIn delay={0.1}>
+          <div className="h-full rounded-2xl border border-border/70 bg-card/80 p-6 md:p-7 shadow-sm transition hover:shadow-md">
+            <div className="flex flex-wrap items-center gap-3 mb-4">
+              <div className="flex items-center gap-3">
                 <Monitor className="w-6 h-6 text-primary" />
                 <h3 className="text-xl font-bold">Mamboo Tecnologia</h3>
-                <a href="https://site.mamboo.co.ao/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-sm inline-flex items-center gap-1">
-                  Visitar <ExternalLink size={12} />
-                </a>
               </div>
-              <p className="text-sm text-muted-foreground mb-4">
-                Atuação como Desenvolvedor Frontend e Analista de QA.
-              </p>
-
-              <h4 className="text-sm font-semibold text-foreground mb-2">Plataformas de Backoffice:</h4>
-              <ul className="text-sm text-muted-foreground space-y-1 mb-4">
-                <li>▸ <span className="text-foreground">Web Lojista</span> – Gestão de lojistas</li>
-                <li>▸ <span className="text-foreground">Web Pack</span> – Gestão operacional interna</li>
-                <li>▸ <span className="text-foreground">Pack Lojista</span> – Acompanhamento de pedidos</li>
-              </ul>
-
-              <h4 className="text-sm font-semibold text-foreground mb-2">Responsabilidades:</h4>
-              <ul className="text-sm text-muted-foreground space-y-1">
-                <li>▸ Interfaces administrativas responsivas</li>
-                <li>▸ Refatoração e otimização de código</li>
-                <li>▸ Testes manuais em dev e produção</li>
-                <li>▸ Colaboração com equipes multidisciplinares</li>
-              </ul>
+              <a
+                href="https://site.mamboo.co.ao/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline text-sm inline-flex items-center gap-1"
+              >
+                Visitar <ExternalLink size={12} />
+              </a>
             </div>
-            <div className="rounded-xl overflow-hidden border border-border">
-              <img src={mambooImg} alt="Manuel na Mamboo" className="w-full h-full object-cover" />
+            <p className="text-sm text-muted-foreground mb-5 leading-relaxed">
+              Atuação como Desenvolvedor Frontend e Analista de QA em produtos
+              digitais de alta demanda.
+            </p>
+
+            <div className="grid gap-2 text-xs uppercase tracking-[0.2em] text-muted-foreground">
+              Produtos e entregas
+            </div>
+            <div className="grid sm:grid-cols-2 gap-3 mt-3">
+              {[
+                "Mamboo Lojista – Plataforma de gestão de lojistas",
+                "Mamboo Pack – Sistema interno de gestão operacional",
+                "App Mamboo Lojista – Acompanhamento de pedidos e status de entregas",
+                "Documentação técnica no Confluence",
+              ].map((r) => (
+                <div
+                  key={r}
+                  className="flex items-start gap-2 text-sm text-muted-foreground"
+                >
+                  <Bug className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                  {r}
+                </div>
+              ))}
+            </div>
+
+            <div className="grid gap-2 text-xs uppercase tracking-[0.2em] text-muted-foreground mt-5">
+              Responsabilidades
+            </div>
+            <div className="grid sm:grid-cols-2 gap-3 mt-3">
+              {[
+                "Desenvolvimento de interfaces responsivas com React + TypeScript",
+                "Refatoração, componentização e melhoria de performance",
+                "QA manual em ambiente de desenvolvimento e produção",
+                "Criação de relatórios de bugs e validações no Jira",
+                "Testes funcionais, regressivos e validação de fluxos críticos",
+                "Colaboração com desenvolvedores, designers e equipe de produto",
+              ].map((r) => (
+                <div
+                  key={r}
+                  className="flex items-start gap-2 text-sm text-muted-foreground"
+                >
+                  <Bug className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                  {r}
+                </div>
+              ))}
             </div>
           </div>
-        </div>
-      </FadeIn>
+        </FadeIn>
 
-      {/* AGT */}
-      <FadeIn delay={0.2}>
-        <div className="p-6 md:p-8 rounded-xl bg-card border border-border">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="md:col-span-2">
-              <div className="flex items-center gap-3 mb-4">
+        {/* SIGT */}
+        <FadeIn delay={0.2}>
+          <div className="h-full rounded-2xl border border-border/70 bg-card/80 p-6 md:p-7 shadow-sm transition hover:shadow-md">
+            <div className="flex flex-wrap items-center gap-3 mb-4">
+              <div className="flex items-center gap-3">
                 <Shield className="w-6 h-6 text-primary" />
                 <h3 className="text-xl font-bold">SIGT – AGT 4.0</h3>
               </div>
-              <p className="text-sm text-muted-foreground mb-4">
-                Atuação na automação de testes no Sistema Integrado de Gestão Tributária da Administração Geral Tributária.
-              </p>
-
-              <div className="grid sm:grid-cols-2 gap-4 mt-4">
-                {[
-                  "Automação de testes com Playwright",
-                  "Testes de regressão",
-                  "Garantia de estabilidade do sistema",
-                  "Revisões técnicas",
-                ].map((r) => (
-                  <div key={r} className="flex items-start gap-2 text-sm text-muted-foreground">
-                    <Bug className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                    {r}
-                  </div>
-                ))}
-              </div>
+              <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                Governo
+              </span>
             </div>
-            <div className="rounded-xl overflow-hidden border border-border flex items-center justify-center bg-background">
-              <img src={foto1} alt="Manuel - Portal do Contribuinte" className="w-full h-auto object-contain" />
+            <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+              Atuação na automação de testes no Sistema Integrado de Gestão
+              Tributária da Administração Geral Tributária.
+            </p>
+
+            <div className="grid sm:grid-cols-2 gap-3 mt-3">
+              {[
+                "Automação de testes com Playwright",
+                "Testes de regressão",
+                "Garantia de estabilidade do sistema",
+                "Revisões técnicas",
+              ].map((r) => (
+                <div
+                  key={r}
+                  className="flex items-start gap-2 text-sm text-muted-foreground"
+                >
+                  <Bug className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                  {r}
+                </div>
+              ))}
             </div>
           </div>
-        </div>
-      </FadeIn>
+        </FadeIn>
 
-      <FadeIn delay={0.2}>
-        <div className="p-6 md:p-8 rounded-xl bg-card border border-border">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="md:col-span-2">
-              <div className="flex items-center gap-3 mb-4">
+        {/* Portal do Contribuinte */}
+        <FadeIn delay={0.25}>
+          <div className="h-full rounded-2xl border border-border/70 bg-card/80 p-6 md:p-7 shadow-sm transition hover:shadow-md">
+            <div className="flex flex-wrap items-center gap-3 mb-4">
+              <div className="flex items-center gap-3">
                 <Shield className="w-6 h-6 text-primary" />
-                <h3 className="text-xl font-bold"> Portal do Contribuinte – AGT 4.0</h3>
-                <a href="https://portaldocontribuinte.minfin.gov.ao/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-sm inline-flex items-center gap-1">
-                  Visitar <ExternalLink size={12} />
-                </a>
+                <h3 className="text-xl font-bold">
+                  Portal do Contribuinte – AGT 4.0
+                </h3>
               </div>
-              <p className="text-sm text-muted-foreground mb-4">
-                Atuação na automação de testes no Portal do Contribuinte da Administração Geral Tributária.
-              </p>
+              <a
+                href="https://portaldocontribuinte.minfin.gov.ao/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline text-sm inline-flex items-center gap-1"
+              >
+                Visitar <ExternalLink size={12} />
+              </a>
+            </div>
+            <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+              Atuação na automação de testes no Portal do Contribuinte da
+              Administração Geral Tributária.
+            </p>
 
-              <div className="grid sm:grid-cols-2 gap-4 mt-4">
-                {[
-                  "Automação de testes com Playwright",
-                  "Testes de regressão",
-                  "Garantia de estabilidade do sistema",
-                  "Revisões técnicas",
-                ].map((r) => (
-                  <div key={r} className="flex items-start gap-2 text-sm text-muted-foreground">
-                    <Bug className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                    {r}
-                  </div>
-                ))}
-              </div>
+            <div className="grid sm:grid-cols-2 gap-3 mt-3">
+              {[
+                "Automação de testes com Playwright",
+                "Testes de regressão",
+                "Garantia de estabilidade do sistema",
+                "Revisões técnicas",
+              ].map((r) => (
+                <div
+                  key={r}
+                  className="flex items-start gap-2 text-sm text-muted-foreground"
+                >
+                  <Bug className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                  {r}
+                </div>
+              ))}
             </div>
           </div>
-        </div>
-      </FadeIn>
+        </FadeIn>
+      </div>
     </div>
   </section>
 );
 
 export default CorporateProjects;
+
