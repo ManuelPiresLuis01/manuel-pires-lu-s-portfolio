@@ -2,13 +2,22 @@ import { FadeIn, SectionTitle } from "./shared";
 
 const categories = [
   {
-    label: "Frontend", techs: ["React", "TypeScript", "HTML5", "CSS3", "Styled Components", "Tailwind"],
+    label: "Frontend",
+    techs: [
+      "React",
+      "TypeScript",
+      "HTML",
+      "CSS",
+      "Styled Components",
+      "Tailwind",
+      "Vite",
+    ],
   },
   { label: "Backend", techs: ["Node.js", "Express"] },
   { label: "Banco de Dados", techs: ["MySQL", "MongoDB"] },
   { label: "Testes", techs: ["Playwright", "Vitest"] },
   { label: "Versionamento", techs: ["Git", "GitHub", "GitLab"] },
-  { label: "Metodologias", techs: ["Agile", "Scrum", "Kanban"] },
+  { label: "Metodologias ágeis", techs: ["Scrum", "Kanban"] },
 ];
 
 const Technologies = () => (
@@ -22,7 +31,9 @@ const Technologies = () => (
         {categories.map((cat, i) => (
           <FadeIn key={cat.label} delay={i * 0.08}>
             <div className="p-6 rounded-xl bg-card border border-border">
-              <h3 className="text-sm font-semibold text-primary mb-4 uppercase tracking-wider">{cat.label}</h3>
+              <h3 className="text-sm font-semibold text-primary mb-4 uppercase tracking-wider">
+                {cat.label}
+              </h3>
               <div className="flex flex-wrap gap-2">
                 {cat.techs.map((t) => (
                   <span

@@ -15,7 +15,7 @@ const services = [
   {
     icon: Globe,
     title: "Desenvolvimento de Websites e Sistemas",
-    items: ["Aplicações em React + TypeScript", "APIs com Node.js e Express", "Integração com MySQL e MongoDB", "Sistemas administrativos"],
+    items: ["Aplicações em React + TypeScript", "APIs com Node.js e Express", "Integração com MySQL e MongoDB"],
   },
   {
     icon: TestTube,

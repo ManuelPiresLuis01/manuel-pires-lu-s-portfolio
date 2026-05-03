@@ -82,7 +82,7 @@ const Hero = () => (
           transition={{ delay: 0.2 }}
           className="text-primary font-mono text-sm mb-4 tracking-wider"
         >
-          Desenvolvedor Full-Stack & Analista de QA
+          Desenvolvedor Web & Analista de Testes
         </motion.p>
 
         <motion.h1
@@ -101,7 +101,7 @@ const Hero = () => (
           transition={{ delay: 0.5 }}
           className="text-muted-foreground text-lg md:text-xl max-w-lg mb-10 leading-relaxed"
         >
-          Desenvolvimento de soluções web escaláveis com foco em qualidade, performance e confiabilidade.
+          Construo soluções web robustas, com foco em performance, qualidade e execução impecável.
         </motion.p>
 
         <motion.div
