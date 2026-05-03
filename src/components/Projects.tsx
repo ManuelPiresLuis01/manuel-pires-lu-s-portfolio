@@ -22,7 +22,7 @@ const projects = [
   },
   {
     title: "Bot – Assistente Virtual WhatsApp",
-    desc: "Assistente virtual automatizado para WhatsApp com respostas inteligentes e fluxos personalizados.",
+    desc: "Assistente virtual automatizado para WhatsApp com respostas inteligentes.",
     tech: ["Node.js", "WhatsApp API", "MongoDB"],
     link: "https://www.kwanzabot.site/",
   },
