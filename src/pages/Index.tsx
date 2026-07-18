@@ -25,17 +25,19 @@ const seoStructuredData = [
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Manuel Pires Luis",
-    alternateName: ["Manuel Pires Luís", "Manuel Pires Luis Developer"],
+    alternateName: ["Manuel Pires Luís", "Manuel Pires Luis Developer", "Manuel Dev"],
     url: "https://www.manuelpiresluis.site/",
     image: "https://www.manuelpiresluis.site/foto-perfil.jpg",
-    jobTitle: "Frontend React Developer and QA Engineer",
+    jobTitle: "Web Developer and QA Engineer",
     description:
-      "Frontend React Developer and QA Engineer focused on TypeScript, Playwright, test automation, quality assurance and remote product teams.",
+      "Web Developer and QA Engineer focused on TypeScript, Playwright, test automation, quality assurance and remote product teams.",
     knowsAbout: [
       "React",
       "TypeScript",
       "JavaScript",
       "Frontend Development",
+      "Backend Development",
+      "full-stack development",
       "QA Engineering",
       "Test Automation",
       "Playwright",
@@ -52,10 +54,10 @@ const seoStructuredData = [
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Manuel Pires Luis | Frontend React Developer & QA Engineer",
+    name: "Manuel Pires Luis | Web Developer & QA Engineer",
     url: "https://www.manuelpiresluis.site/",
     description:
-      "Portfolio website of Manuel Pires Luis, a Frontend React Developer and QA Engineer available for remote roles and freelance work.",
+      "Portfolio website of Manuel Pires Luis, a Web Developer and QA Engineer available for remote roles and freelance work.",
     primaryImageOfPage: "https://www.manuelpiresluis.site/foto-perfil.jpg",
   },
 ];
@@ -63,8 +65,8 @@ const seoStructuredData = [
 const Index = () => (
   <>
     <SEO
-      title="Manuel Pires Luis | Frontend React Developer & QA Engineer"
-      description="Frontend React Developer and QA Engineer portfolio. Manuel Pires Luis builds reliable web products with React, TypeScript, Playwright and modern testing for remote teams and freelance clients."
+      title="Manuel Pires Luis | Web Developer & QA Engineer"
+      description="Web Developer and QA Engineer portfolio. Manuel Pires Luis builds reliable web products with React, TypeScript, Playwright and modern testing for remote teams and freelance clients."
       structuredData={seoStructuredData}
     />
     <div className="min-h-screen bg-background">
