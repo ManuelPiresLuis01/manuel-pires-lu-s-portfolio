@@ -14,6 +14,7 @@ const certs = [
   { title: "How to Create a Jira SCRUM Project – Coursera" },
   { title: "Pedagogia – UNIVESP (Módulos 1/2 e 3/4)" },
   { title: "EF SET English Certificate – B1" },
+  { title: "3º Lugar – Hackathon de Cibersegurança do MININT" },
 ];
 
 const Certifications = () => {
