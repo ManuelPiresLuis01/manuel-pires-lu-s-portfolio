@@ -131,7 +131,7 @@
 
   .binary-rain {
     @apply absolute inset-0 overflow-hidden pointer-events-none;
-    opacity: 0.2;
+    opacity: 0.35;
   }
 
   .binary-column {
@@ -139,10 +139,12 @@
     top: -140%;
     white-space: pre;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 800;
     line-height: 1.2;
-    color: hsl(var(--gradient-end) / 0.55);
-    text-shadow: 0 0 8px hsl(var(--gradient-start) / 0.35);
+    letter-spacing: 0.1em;
+    color: hsl(var(--gradient-start) / 0.95);
+    text-shadow: 0 0 10px hsl(var(--gradient-end) / 0.35);
     animation: binary-fall linear infinite;
   }
 }

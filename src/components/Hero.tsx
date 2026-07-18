@@ -44,17 +44,6 @@ const columns = Array.from({ length: 18 }, (_, index) => index);
 
 const Hero = () => (
   <section className="relative min-h-screen flex items-center section-padding pt-32">
-    {/* Subtle grid bg */}
-    <div
-      className="absolute inset-0 opacity-[0.03]"
-      style={{
-        backgroundImage:
-          "linear-gradient(hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)",
-        backgroundSize: "60px 60px",
-      }}
-    />
-
-    {/* Binary rain */}
     <div className="binary-rain" aria-hidden="true">
       {columns.map((index) => (
         <span
@@ -70,9 +59,6 @@ const Hero = () => (
         </span>
       ))}
     </div>
-
-    {/* Glow blob */}
-    <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px] pointer-events-none" />
 
     <div className="container-custom relative z-10">
       <div className="text-center md:text-left">

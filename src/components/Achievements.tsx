@@ -2,6 +2,7 @@
 import { Trophy } from "lucide-react";
 import aocpc2 from "@/assets/aocpc2.jpg";
 import aocpc3 from "@/assets/aocpc3.jpg";
+import angotic from "@/assets/angotic.jpeg";
 import devfestLuanda from "@/assets/devfest.jpg";
 
 const achievements = [
@@ -12,7 +13,11 @@ const achievements = [
   },
   { title: "3º Lugar – ICPC 2025", desc: "Angolan Collegiate Programming Contest", img: aocpc3 },
   { title: "Troféu AOCPC 2025", desc: "3º Classificado no concurso universitário de programação", img: aocpc2 },
-
+  {
+    title: "3º Lugar – Hackathon de Cibersegurança",
+    desc: "3 lugar do Hackaton de cybersegurança do MININT organizado pelo Angotic",
+    img: angotic,
+  },
 ];
 
 const Achievements = () => (

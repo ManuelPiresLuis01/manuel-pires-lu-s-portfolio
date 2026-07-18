@@ -60,7 +60,7 @@ const YetuStore = () => (
           </FadeIn>
 
           <FadeIn className="order-2 space-y-6 lg:order-1">
-            <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
+            <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
               <BadgeCheck size={16} />
               Co-fundador da YetuStore
             </div>
@@ -82,22 +82,6 @@ const YetuStore = () => (
                 Também criamos oportunidades com um sistema de afiliação que recompensa recomendações e fortalece uma
                 comunidade de parceiros em crescimento.
               </p>
-            </div>
-
-            <div className="grid gap-4 md:grid-cols-3">
-              {highlights.map(({ icon: Icon, title, description }, index) => {
-                return (
-                  <FadeIn
-                    key={title}
-                    delay={0.1 + index * 0.08}
-                    className="rounded-2xl border border-white/8 bg-white/5 p-4 backdrop-blur-sm"
-                  >
-                    <Icon className="mb-3 text-primary" size={20} />
-                    <h3 className="mb-2 font-semibold text-foreground">{title}</h3>
-                    <p className="text-sm leading-relaxed text-muted-foreground">{description}</p>
-                  </FadeIn>
-                );
-              })}
             </div>
           </FadeIn>
         </div>

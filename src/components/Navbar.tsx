@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 
 const links = [
@@ -16,6 +16,7 @@ const HEADER_OFFSET = 72;
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 50);
@@ -38,10 +39,7 @@ const Navbar = () => {
     const targetTop = target.getBoundingClientRect().top + window.scrollY - HEADER_OFFSET;
     window.scrollTo({ top: targetTop, behavior: "smooth" });
     window.history.replaceState(null, "", href);
-  };
-
-  const handleScrollHint = () => {
-    window.scrollTo({ top: window.innerHeight * 0.9, behavior: "smooth" });
+    setMobileMenuOpen(false);
   };
 
   return (
@@ -53,9 +51,9 @@ const Navbar = () => {
         scrolled ? "glass shadow-glow-sm" : "bg-transparent"
       }`}
     >
-      <div className="container-custom flex items-center justify-between h-16 px-4 md:px-0">
+      <div className="container-custom flex items-center justify-between h-16 px-4 md:px-0 relative">
         <a href="#" className="text-xl font-bold text-gradient">MPL</a>
-        
+
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-6">
           {links.map((l) => (
@@ -70,22 +68,33 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Mobile scroll hint */}
-        <button
-          type="button"
-          onClick={handleScrollHint}
-          className="md:hidden inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-          aria-label="Role para ver as seções"
-        >
-          <span>Role</span>
-          <motion.span
-            animate={{ y: [0, 6, 0] }}
-            transition={{ duration: 1.6, repeat: Infinity }}
-            className="text-primary"
+        {/* Mobile menu */}
+        <div className="md:hidden">
+          <button
+            type="button"
+            onClick={() => setMobileMenuOpen((open) => !open)}
+            className="inline-flex items-center justify-center rounded-md p-2 text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors"
+            aria-label="Abrir menu"
+            aria-expanded={mobileMenuOpen}
           >
-            <ChevronDown size={18} />
-          </motion.span>
-        </button>
+            {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+
+          {mobileMenuOpen && (
+            <div className="absolute top-14 left-4 right-4 rounded-xl border border-border bg-background/95 p-3 shadow-glow-sm backdrop-blur">
+              {links.map((l) => (
+                <a
+                  key={l.href}
+                  href={l.href}
+                  onClick={(event) => handleNavClick(event, l.href)}
+                  className="block rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-primary/10 hover:text-primary transition-colors"
+                >
+                  {l.label}
+                </a>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </motion.nav>
   );
