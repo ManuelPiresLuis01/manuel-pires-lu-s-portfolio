@@ -1,4 +1,6 @@
-import { FadeIn, SectionTitle } from "./shared";
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import { SectionTitle } from "./shared";
+import { useRef } from "react";
 
 const items = [
   {
@@ -34,42 +36,68 @@ const items = [
   },
 ];
 
-const Timeline = () => (
-  <section id="timeline" className="section-padding">
+type TimelineEntryProps = {
+  item: (typeof items)[number];
+  index: number;
+  progress: ReturnType<typeof useScroll>["scrollYProgress"];
+  reduceMotion: boolean | null;
+};
+
+const TimelineEntry = ({ item, index, progress, reduceMotion }: TimelineEntryProps) => {
+  const start = index / items.length;
+  const end = (index + 0.7) / items.length;
+  const opacity = useTransform(progress, [start, end], [0.3, 1]);
+  const y = useTransform(progress, [start, end], [24, 0]);
+
+  return (
+    <motion.div
+      initial={false}
+      style={reduceMotion ? undefined : { opacity, y }}
+      className={`relative flex ${index % 2 === 0 ? "md:flex-row-reverse" : ""}`}
+    >
+      <span className="absolute left-5 top-2 z-10 flex h-4 w-4 -translate-x-1.5 items-center justify-center rounded-full border-2 border-background bg-primary md:left-1/2 md:top-3" />
+      <div className={`w-full pl-12 md:w-1/2 md:pl-0 ${index % 2 === 0 ? "md:pr-12 md:text-right" : "md:pl-12"}`}>
+        <div className="rounded-[26px] border border-border bg-background/60 p-5 shadow-glow-sm backdrop-blur-sm md:p-6">
+          <span className="font-mono text-sm font-medium text-primary">{item.year}</span>
+          <h3 className="mt-2 text-xl font-semibold tracking-tight">{item.title}</h3>
+          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.desc}</p>
+        </div>
+      </div>
+    </motion.div>
+  );
+};
+
+const Timeline = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const reduceMotion = useReducedMotion();
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start 75%", "end 25%"],
+  });
+
+  return (
+  <section ref={sectionRef} id="timeline" className="section-padding bg-surface/60">
     <div className="container-custom">
       <SectionTitle subtitle="A jornada profissional até aqui">
         Linha do Tempo
       </SectionTitle>
 
-      <div className="relative max-w-2xl mx-auto">
-        {/* Vertical line */}
-        <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-px" />
-
-        {items.map((item, i) => (
-          <FadeIn key={i} delay={i * 0.1}>
-            <div
-              className={`relative flex items-start mb-12 ${i % 2 === 0 ? "md:flex-row-reverse" : ""}`}
-            >
-              {/* Dot */}
-              <div className="absolute left-4 md:left-1/2 w-3 h-3 rounded-full bg-primary border-2 border-background -translate-x-1.5 mt-1.5 z-10" />
-
-              <div
-                className={`ml-12 md:ml-0 md:w-[45%] ${i % 2 === 0 ? "md:mr-auto md:pr-8 md:text-right" : "md:ml-auto md:pl-8"}`}
-              >
-                <span className="text-primary font-mono text-sm font-medium">
-                  {item.year}
-                </span>
-                <h3 className="font-semibold mt-1">{item.title}</h3>
-                <p className="text-sm text-muted-foreground mt-1">
-                  {item.desc}
-                </p>
-              </div>
-            </div>
-          </FadeIn>
-        ))}
+      <div className="relative mx-auto max-w-5xl">
+        <div className="space-y-10 md:space-y-12">
+          {items.map((item, i) => (
+            <TimelineEntry
+              key={item.year + item.title}
+              item={item}
+              index={i}
+              progress={scrollYProgress}
+              reduceMotion={reduceMotion}
+            />
+          ))}
+        </div>
       </div>
     </div>
   </section>
-);
+  );
+};
 
 export default Timeline;

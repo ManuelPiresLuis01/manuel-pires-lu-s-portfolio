@@ -1,6 +1,8 @@
 import { ArrowUpRight, BadgeCheck, HandCoins, Rocket, ShoppingBag } from "lucide-react";
 import coFounderPhoto from "@/assets/co_founder.jpg";
 import { FadeIn } from "./shared";
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 const highlights = [
   {
@@ -20,20 +22,37 @@ const highlights = [
   },
 ];
 
-const YetuStore = () => (
-  <section
-    id="yetustore"
-    className="section-padding relative isolate flex min-h-[100dvh] items-center overflow-hidden"
-  >
-    <div
-      aria-hidden="true"
-      className="parallax-photo-background yetu-fixed-background absolute inset-0"
-      style={{ backgroundImage: `url("${coFounderPhoto}")` }}
-    />
-    <div aria-hidden="true" className="yetu-background-darken absolute inset-0" />
-    <div aria-hidden="true" className="yetu-background-shade absolute inset-0" />
+const YetuStore = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const reduceMotion = useReducedMotion();
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+  const photoY = useTransform(scrollYProgress, [0, 1], [70, -70]);
+  const photoScale = useTransform(scrollYProgress, [0, 1], [1.12, 1]);
+  const contentY = useTransform(scrollYProgress, [0, 0.5, 1], [36, 0, -24]);
 
-    <div className="container-custom relative z-10 py-4 md:py-8">
+  return (
+  <section
+    ref={sectionRef}
+    id="yetustore"
+    className="section-padding relative flex min-h-[100dvh] items-center overflow-hidden"
+  >
+    <motion.div
+      aria-hidden="true"
+      className="hero-background parallax-photo-background absolute inset-[-8%_0]"
+      style={reduceMotion ? { backgroundImage: `url("${coFounderPhoto}")` } : {
+        backgroundImage: `url("${coFounderPhoto}")`,
+        backgroundAttachment: "scroll",
+        y: photoY,
+        scale: photoScale,
+      }}
+    />
+    <div aria-hidden="true" className="hero-background-darken absolute inset-0" />
+    <div aria-hidden="true" className="hero-background-shade absolute inset-0" />
+
+    <motion.div style={reduceMotion ? undefined : { y: contentY }} className="container-custom relative z-10 py-4 md:py-8">
       <FadeIn className="max-w-3xl">
         <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-background/35 px-4 py-2 text-xs font-medium text-primary backdrop-blur-sm sm:text-sm">
           <BadgeCheck size={16} />
@@ -76,8 +95,9 @@ const YetuStore = () => (
           </FadeIn>
         ))}
       </div>
-    </div>
+    </motion.div>
   </section>
-);
+  );
+};
 
 export default YetuStore;

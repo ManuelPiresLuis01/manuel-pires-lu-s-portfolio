@@ -127,7 +127,6 @@ const Projects = () => (
                   </h3>
                   {"featured" in p && p.featured && (
                     <span className="inline-flex shrink-0 items-center gap-1 rounded-full bg-primary/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-primary">
-                      <Sparkles size={12} aria-hidden="true" />
                       Destaque
                     </span>
                   )}

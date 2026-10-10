@@ -1,5 +1,5 @@
 import { FadeIn, SectionTitle } from "./shared";
-import { Mail, Linkedin, Github, MessageCircle, ArrowUpRight } from "lucide-react";
+import { Mail, Globe, Code2, MessageCircle, ArrowUpRight } from "lucide-react";
 
 const contacts = [
   {
@@ -9,13 +9,13 @@ const contacts = [
     href: "mailto:manuelpiresluis@gmail.com",
   },
   {
-    icon: Linkedin,
+    icon: Globe,
     label: "LinkedIn",
     value: "Manuel Pires Luís",
     href: "https://www.linkedin.com/in/manuel-pires-l-5275852aa/",
   },
   {
-    icon: Github,
+    icon: Code2,
     label: "GitHub",
     value: "ManuelPiresLuis01",
     href: "https://github.com/ManuelPiresLuis01",
@@ -31,15 +31,15 @@ const contacts = [
 const Contact = () => (
   <section id="contato" className="section-padding">
     <div className="container-custom">
-      <SectionTitle subtitle="Vamos trabalhar juntos no seu próximo projeto">
-        Entre em Contato
+      <SectionTitle subtitle="Se tens uma ideia, um projecto ou simplesmente queres trocar experiências, estou disponível para conversar.">
+        Vamos conversar?
       </SectionTitle>
 
       <div className="grid gap-12 md:grid-cols-[0.7fr_1.3fr]">
         <FadeIn className="max-w-sm">
           <p className="text-lg leading-relaxed text-muted-foreground">
-            Tem um projecto em mente ou gostaria de conversar? Escolha o canal
-            mais conveniente.
+            Tenho interesse em colaborar em projetos que tenham impacto real, criatividade e rigor técnico.
+            Escolhe o canal mais conveniente e vamos falar.
           </p>
         </FadeIn>
         <div className="divide-y divide-border border-y border-border">

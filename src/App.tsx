@@ -8,6 +8,7 @@ import NotFound from "./pages/NotFound";
 import PersonalProjects from "./pages/PersonalProjects";
 import CertificationsPage from "./pages/CertificationsPage";
 import AchievementsPage from "./pages/AchievementsPage";
+import FloatingGithub from "./components/FloatingGithub";
 
 const queryClient = new QueryClient();
 
@@ -17,6 +18,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <FloatingGithub />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/personalProjects" element={<PersonalProjects />} />
