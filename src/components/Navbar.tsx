@@ -81,7 +81,7 @@ const Navbar = () => {
       }`}
       style={{ pointerEvents: visible || mobileMenuOpen ? "auto" : "none" }}
     >
-      <div className="container-custom grid h-16 grid-cols-[1fr_auto] items-center px-4 md:grid-cols-[1fr_auto_1fr] md:px-0">
+      <div className="container-custom relative grid h-16 grid-cols-[1fr_auto] items-center px-4 md:grid-cols-[1fr_auto_1fr] md:px-0">
         <a href="/" className="justify-self-start text-xl font-bold text-gradient">
           MPL
         </a>
@@ -115,14 +115,18 @@ const Navbar = () => {
             type="button"
             onClick={() => setMobileMenuOpen((open) => !open)}
             className="inline-flex items-center justify-center rounded-md p-2 text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors"
-            aria-label="Abrir menu"
+            aria-label={mobileMenuOpen ? "Fechar menu" : "Abrir menu"}
             aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-navigation"
           >
             {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
 
           {mobileMenuOpen && (
-            <div className="absolute top-14 left-4 right-4 rounded-xl border border-border bg-background/95 p-3 shadow-glow-sm backdrop-blur">
+            <div
+              id="mobile-navigation"
+              className="absolute right-0 top-[calc(100%+0.5rem)] z-50 max-h-[calc(100dvh-5rem)] w-[min(20rem,calc(100vw-2rem))] overflow-y-auto rounded-xl border border-border bg-background/95 p-3 shadow-glow-sm backdrop-blur"
+            >
               {links.map((l) => (
                 <a
                   key={l.href}
