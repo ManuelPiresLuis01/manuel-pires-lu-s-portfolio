@@ -1,18 +1,18 @@
 import Achievements from "@/components/Achievements";
 import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
-import SEO from "@/components/SEO";
+import BackToHome from "@/components/BackToHome";
+import SiteSEO from "@/components/SEO";
 
 const AchievementsPage = () => (
   <>
-    <SEO
+    <SiteSEO
       title="Momentos & Conquistas | Manuel Pires Luís"
       description="Momentos marcantes, palestras e conquistas de Manuel Pires Luís."
       path="/moments"
     />
     <div className="min-h-screen bg-background">
-      <Navbar />
-      <main className="pt-16">
+      <BackToHome />
+      <main>
         <Achievements />
       </main>
       <Footer />

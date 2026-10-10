@@ -22,7 +22,7 @@ export const FadeIn = ({ children, className = "", delay = 0 }: Props) => (
 export const SectionTitle = ({ children, subtitle }: { children: ReactNode; subtitle?: string }) => (
   <FadeIn className="mb-10 md:mb-14">
     <div className="mb-4 h-1 w-12 rounded-full bg-gradient-primary" />
-    <h2 className="mb-3 text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl">{children}</h2>
+    <h2 className="mb-3 text-[clamp(1.8rem,2.8vw,2.7rem)] font-bold tracking-[-0.04em]">{children}</h2>
     {subtitle && <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">{subtitle}</p>}
   </FadeIn>
 );

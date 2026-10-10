@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Github, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
 
@@ -98,16 +98,6 @@ const Navbar = () => {
             </a>
           ))}
         </div>
-
-        <a
-          href="https://github.com/ManuelPiresLuis01"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Visitar GitHub de Manuel Pires Luís"
-          className="hidden justify-self-end rounded-full p-2 text-muted-foreground transition-colors hover:bg-primary/10 hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary md:inline-flex"
-        >
-          <Github size={18} />
-        </a>
 
         {/* Mobile menu */}
         <div className="relative justify-self-end md:hidden">

@@ -1,11 +1,11 @@
 import Certifications from "@/components/Certifications";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import SEO from "@/components/SEO";
+import SiteSEO from "@/components/SEO";
 
 const CertificationsPage = () => (
   <>
-    <SEO
+    <SiteSEO
       title="Certificações | Manuel Pires Luís"
       description="Certificações, formação contínua e reconhecimento profissional de Manuel Pires Luís."
       path="/certifications"

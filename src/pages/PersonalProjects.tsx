@@ -1,19 +1,19 @@
 import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
+import BackToHome from "@/components/BackToHome";
 import Projects from "@/components/Projects";
 import CorporateProjects from "@/components/CorporateProjects";
-import SEO from "@/components/SEO";
+import SiteSEO from "@/components/SEO";
 
 const PersonalProjects = () => (
   <>
-    <SEO
+    <SiteSEO
       title="Projetos | Manuel Pires Luís"
       description="Projectos pessoais, aplicações e websites desenvolvidos por Manuel Pires Luís."
       path="/personalProjects"
     />
     <div className="min-h-screen bg-background">
-      <Navbar />
-      <main className="pt-16">
+      <BackToHome />
+      <main>
         <CorporateProjects />
         <Projects />
       </main>

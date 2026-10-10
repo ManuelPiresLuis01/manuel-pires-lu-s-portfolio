@@ -47,15 +47,11 @@ const Achievements = () => (
       >
         <div
           aria-hidden="true"
-          className="achievement-photo-backdrop absolute inset-0"
+          className="hero-background achievement-photo parallax-photo-background absolute inset-0"
           style={{ backgroundImage: `url("${achievement.img}")` }}
         />
-        <div
-          aria-hidden="true"
-          className="achievement-photo parallax-photo-background absolute inset-0"
-          style={{ backgroundImage: `url("${achievement.img}")` }}
-        />
-        <div aria-hidden="true" className="achievement-photo-shade absolute inset-0" />
+        <div aria-hidden="true" className="hero-background-darken absolute inset-0" />
+        <div aria-hidden="true" className="hero-background-shade absolute inset-0" />
 
         <div className="container-custom relative z-10">
           <FadeIn className="max-w-2xl">
