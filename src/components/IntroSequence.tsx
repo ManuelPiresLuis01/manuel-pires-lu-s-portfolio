@@ -58,9 +58,6 @@ const IntroSequence = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="w-full max-w-3xl text-center"
           >
-            <p className="mb-5 font-mono text-xs uppercase tracking-[0.32em] text-primary/80">
-              Manuel Pires Luís
-            </p>
             <h1 className="min-h-[3rem] text-[clamp(1.8rem,4vw,3.2rem)] font-semibold leading-tight tracking-tight text-foreground">
               {typedText}
               <span className="ml-1 inline-block h-6 w-[2px] animate-pulse bg-primary align-middle sm:h-8" />

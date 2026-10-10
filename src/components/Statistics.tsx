@@ -1,5 +1,5 @@
 import { animate, motion, useInView, useMotionValue, useReducedMotion, useTransform } from "framer-motion";
-import { Building2, FolderKanban, Github, Star } from "lucide-react";
+import { Briefcase, Building2, FolderKanban, Github, Star } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { SectionTitle } from "./shared";
 
@@ -8,6 +8,7 @@ const statistics = [
   { label: "Estrelas no GitHub", value: 76, icon: Star },
   { label: "Projetos no portfólio", value: 15, icon: FolderKanban },
   { label: "Empresas onde trabalhei", value: 3, icon: Building2 },
+  { label: "Anos de experiência", value: 3, prefix: "+", icon: Briefcase },
 ];
 
 const CountUp = ({ value }: { value: number }) => {
@@ -46,8 +47,8 @@ const Statistics = () => (
         O trabalho em números
       </SectionTitle>
 
-      <div className="grid grid-cols-2 gap-x-5 gap-y-9 md:grid-cols-4 md:gap-8">
-        {statistics.map(({ label, value, icon: Icon }) => (
+      <div className="grid grid-cols-2 gap-x-5 gap-y-9 md:grid-cols-5 md:gap-8">
+        {statistics.map(({ label, value, prefix, icon: Icon }) => (
           <div
             key={label}
             aria-label={`${value} ${label}`}
@@ -55,6 +56,7 @@ const Statistics = () => (
           >
             <Icon aria-hidden="true" className="mb-5 h-5 w-5 text-primary" strokeWidth={1.7} />
             <p className="text-[clamp(2rem,4vw,3.5rem)] font-semibold leading-none tracking-[-0.06em] text-foreground">
+              {prefix}
               <CountUp value={value} />
             </p>
             <p className="mt-3 max-w-[12rem] text-sm leading-relaxed text-muted-foreground">

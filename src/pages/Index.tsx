@@ -29,9 +29,9 @@ const seoStructuredData = [
     alternateName: ["Manuel Pires Luís", "Manuel Pires Luis Developer", "Manuel Dev"],
     url: "https://www.manuelpiresluis.site/",
     image: "https://www.manuelpiresluis.site/foto-perfil.jpg",
-    jobTitle: "Web Developer and QA Engineer",
+    jobTitle: "Software Developer and QA Engineer",
     description:
-      "Web Developer and QA Engineer focused on TypeScript, Playwright, test automation, quality assurance and remote product teams.",
+      "Software Developer and QA Engineer focused on TypeScript, Playwright, test automation, quality assurance and remote product teams.",
     knowsAbout: [
       "React",
       "TypeScript",
@@ -66,10 +66,6 @@ const seoStructuredData = [
 const Index = () => {
   const storyRef = useRef<HTMLDivElement>(null);
   const reduceMotion = useReducedMotion();
-  const { scrollYProgress } = useScroll({
-    target: storyRef,
-    offset: ["start start", "end end"],
-  });
   const { scrollYProgress: lineProgress } = useScroll({
     target: storyRef,
     offset: ["start end", "end end"],
