@@ -1,5 +1,5 @@
 import { FadeIn, SectionTitle } from "./shared";
-import { Mail, Linkedin, Github, MessageCircle } from "lucide-react";
+import { Mail, Linkedin, Github, MessageCircle, ArrowUpRight } from "lucide-react";
 
 const contacts = [
   {
@@ -35,39 +35,32 @@ const Contact = () => (
         Entre em Contato
       </SectionTitle>
 
-      <div className="max-w-2xl mx-auto">
-        <div className="grid sm:grid-cols-2 gap-4 mb-10">
+      <div className="grid gap-12 md:grid-cols-[0.7fr_1.3fr]">
+        <FadeIn className="max-w-sm">
+          <p className="text-lg leading-relaxed text-muted-foreground">
+            Tem um projecto em mente ou gostaria de conversar? Escolha o canal
+            mais conveniente.
+          </p>
+        </FadeIn>
+        <div className="divide-y divide-border border-y border-border">
           {contacts.map((c, i) => (
-            <FadeIn key={c.label} delay={i * 0.1}>
+            <FadeIn key={c.label} delay={i * 0.06}>
               <a
                 href={c.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-4 p-5 rounded-xl bg-card border border-border hover:border-primary/30 hover:shadow-glow-sm transition-all duration-300"
+                className="group flex items-center gap-4 py-5 transition-colors hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
               >
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                  <c.icon className="w-5 h-5 text-primary" />
-                </div>
-                <div>
+                <c.icon aria-hidden="true" className="h-5 w-5 shrink-0 text-primary" />
+                <div className="min-w-0 flex-1">
                   <p className="text-xs text-muted-foreground">{c.label}</p>
-                  <p className="text-sm font-medium">{c.value}</p>
+                  <p className="break-words text-sm font-medium text-foreground">{c.value}</p>
                 </div>
+                <ArrowUpRight aria-hidden="true" className="h-4 w-4 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary" />
               </a>
             </FadeIn>
           ))}
         </div>
-
-        <FadeIn delay={0.4}>
-          <div className="text-center">
-            <a
-              href="mailto:manuelpiresluis@gmail.com"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-primary text-primary-foreground font-semibold rounded-xl hover:opacity-90 transition-opacity shadow-glow"
-            >
-              <Mail className="w-5 h-5" />
-              Solicitar Serviço
-            </a>
-          </div>
-        </FadeIn>
       </div>
     </div>
   </section>

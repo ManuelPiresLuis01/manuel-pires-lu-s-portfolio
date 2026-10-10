@@ -3,9 +3,29 @@ import { useState } from "react";
 import { Award, ChevronDown, ChevronUp } from "lucide-react";
 
 const certs = [
-  { title: "3º Lugar – ICPC Angolan Collegiate Programming Contest 2025", highlight: true },
+  {
+    title:
+      "1º Lugar – ICPC Angolan Collegiate Programming Contest 2026 (internal - INSTIC)",
+    highlight: true,
+  },
+  { title: "Career Essentials in GitHub Professional Certificate" },
+  { title: "Practical GitHub Copilot" },
+  { title: "Practical GitHub Project Management and Collaboration" },
+  { title: "Advanced Testing Foundations: Keeping QA Skills Current in the Age of AI" },
+  { title: "CSS Layouts: From Float to Flexbox and Grid" },
+  { title: "Software Testing Foundations: Test Strategy" },
+  { title: "Delegating Tasks to GitHub Copilot: Building Faster, Smarter Engineering Practices" },
+  { title: "Building RESTful APIs with Node.js and Express" },
+  {
+    title: "3º Lugar – ICPC Angolan Collegiate Programming Contest 2025",
+    highlight: true,
+  },
+  { title: "3º Lugar – Hackathon de Cibersegurança do MININT" },
   { title: "24º Lugar – ICPC Angolan Collegiate Programming Contest 2024" },
-  { title: "Simplifica Inteligência Artificial Express – Simplifica Treinamentos" },
+  {
+    title:
+      "Simplifica Inteligência Artificial Express – Simplifica Treinamentos",
+  },
   { title: "Technology Bootcamp – Kappa" },
   { title: "Responsive Web Design – freeCodeCamp" },
   { title: "Programming Foundations: Software Testing/QA – LinkedIn" },
@@ -14,7 +34,6 @@ const certs = [
   { title: "How to Create a Jira SCRUM Project – Coursera" },
   { title: "Pedagogia – UNIVESP (Módulos 1/2 e 3/4)" },
   { title: "EF SET English Certificate – B1" },
-  { title: "3º Lugar – Hackathon de Cibersegurança do MININT" },
 ];
 
 const Certifications = () => {
@@ -28,16 +47,22 @@ const Certifications = () => {
           Certificações
         </SectionTitle>
 
-        <div className="grid sm:grid-cols-2 gap-4 max-w-4xl mx-auto">
+        <div className="grid gap-x-10 md:grid-cols-2">
           {visible.map((c, i) => (
             <FadeIn key={c.title} delay={i * 0.05}>
-              <div className={`flex items-start gap-3 p-4 rounded-xl border transition-all ${
-                c.highlight
-                  ? "bg-primary/10 border-primary/30 shadow-glow-sm"
-                  : "bg-card border-border hover:border-primary/20"
-              }`}>
-                <Award className={`w-5 h-5 shrink-0 mt-0.5 ${c.highlight ? "text-primary" : "text-muted-foreground"}`} />
-                <span className={`text-sm ${c.highlight ? "text-foreground font-medium" : "text-muted-foreground"}`}>
+              <div
+                className={`flex h-full items-start gap-3 border-b py-4 transition-colors ${
+                  c.highlight
+                    ? "border-primary/40"
+                    : "border-border hover:border-primary/30"
+                }`}
+              >
+                <Award
+                  className={`mt-0.5 h-5 w-5 shrink-0 ${c.highlight ? "text-primary" : "text-muted-foreground"}`}
+                />
+                <span
+                  className={`text-sm leading-relaxed ${c.highlight ? "font-medium text-foreground" : "text-muted-foreground"}`}
+                >
                   {c.title}
                 </span>
               </div>
@@ -51,7 +76,8 @@ const Certifications = () => {
               onClick={() => setExpanded(!expanded)}
               className="inline-flex items-center gap-1.5 text-sm text-primary hover:underline"
             >
-              {expanded ? "Ver menos" : "Ver todas"} {expanded ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
+              {expanded ? "Ver menos" : "Ver todas"}{" "}
+              {expanded ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
             </button>
           </div>
         )}

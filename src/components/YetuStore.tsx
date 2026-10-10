@@ -1,90 +1,80 @@
-import { BadgeCheck, HandCoins, Rocket, ShoppingBag } from "lucide-react";
+import { ArrowUpRight, BadgeCheck, HandCoins, Rocket, ShoppingBag } from "lucide-react";
 import coFounderPhoto from "@/assets/co_founder.jpg";
 import { FadeIn } from "./shared";
 
 const highlights = [
   {
     icon: Rocket,
-    title: "Co-fundador",
-    description:
-      "Participo na visão, estruturação e crescimento de uma startup angolana com foco em confiança e impacto real.",
+    title: "Co-fundador & CTO",
+    description: "Visão de produto, estratégia e crescimento.",
   },
   {
     icon: ShoppingBag,
-    title: "Cash on delivery",
-    description:
-      "A YetuStore é pioneira em Angola neste modelo, permitindo que o cliente pague apenas ao receber o produto.",
+    title: "Pagamento na entrega",
+    description: "O cliente paga apenas quando recebe.",
   },
   {
     icon: HandCoins,
-    title: "Sistema de afiliação",
-    description:
-      "A marca recompensa clientes e parceiros por recomendações, incentivando o empreendedorismo e a comunidade.",
+    title: "Rede de afiliados",
+    description: "Recomendações que criam oportunidades.",
   },
 ];
 
 const YetuStore = () => (
-  <section id="yetustore" className="section-padding">
-    <div className="container-custom">
-      <div className="relative overflow-hidden rounded-[2rem] px-6 py-8 md:px-10 md:py-12">
-        <div className="absolute -right-12 top-10 h-40 w-40 rounded-full bg-primary/10 blur-3xl" />
-        <div className="absolute -left-10 bottom-0 h-32 w-32 rounded-full bg-cyan-400/10 blur-3xl" />
+  <section
+    id="yetustore"
+    className="section-padding relative isolate flex min-h-[100dvh] items-center overflow-hidden"
+  >
+    <div
+      aria-hidden="true"
+      className="parallax-photo-background yetu-fixed-background absolute inset-0"
+      style={{ backgroundImage: `url("${coFounderPhoto}")` }}
+    />
+    <div aria-hidden="true" className="yetu-background-darken absolute inset-0" />
+    <div aria-hidden="true" className="yetu-background-shade absolute inset-0" />
 
-        <div className="relative grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
-          <FadeIn delay={0.15} className="order-1 lg:order-2">
-            <div className="relative mx-auto max-w-md">
-              <div className="absolute inset-0 rounded-[2rem] bg-gradient-primary opacity-20 blur-2xl" />
-              <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-black/20 p-3 backdrop-blur-md">
-                <div className="overflow-hidden rounded-[1.5rem]">
-                  <img
-                    src={coFounderPhoto}
-                    alt="Manuel Pires Luis, co-fundador da YetuStore"
-                    loading="lazy"
-                    decoding="async"
-                    className="h-[460px] w-full object-cover object-top"
-                  />
-                </div>
-                <div className="mt-4 flex items-center justify-between rounded-2xl border border-white/10 bg-background/40 px-4 py-3">
-                  <div>
-                    <p className="text-sm text-muted-foreground">Função</p>
-                    <p className="font-semibold text-foreground">Co-fundador</p>
-                  </div>
-                  <div className="h-10 w-px bg-white/10" />
-                  <div>
-                    <p className="text-sm text-muted-foreground">Startup</p>
-                    <p className="font-semibold text-foreground">YetuStore</p>
-                  </div>
-                </div>
+    <div className="container-custom relative z-10 py-4 md:py-8">
+      <FadeIn className="max-w-3xl">
+        <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-background/35 px-4 py-2 text-xs font-medium text-primary backdrop-blur-sm sm:text-sm">
+          <BadgeCheck size={16} />
+          Co-fundador da YetuStore
+        </div>
+
+        <h2 className="mb-5 max-w-2xl text-2xl font-bold leading-tight tracking-tight sm:text-3xl lg:text-4xl">
+          Comércio digital com mais confiança, através da{" "}
+          <span className="text-gradient">YetuStore</span>.
+        </h2>
+        <p className="max-w-2xl text-sm leading-relaxed text-foreground/85 sm:text-base">
+          Como co-fundador, ajudo a criar uma experiência de compra prática e
+          segura, com produtos importados, pagamento na entrega e oportunidades
+          para uma comunidade de afiliados.
+        </p>
+
+        <a
+          href="https://www.yetustore.shop/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-primary transition-colors hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+        >
+          Conhecer a YetuStore
+          <ArrowUpRight size={16} />
+        </a>
+      </FadeIn>
+
+      <div className="mt-10 grid gap-6 border-t border-white/20 pt-6 sm:grid-cols-3 sm:gap-8 md:mt-14 md:pt-8">
+        {highlights.map((highlight, index) => (
+          <FadeIn key={highlight.title} delay={index * 0.08}>
+            <div className="flex items-start gap-3">
+              <highlight.icon aria-hidden="true" className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+              <div>
+                <h3 className="text-sm font-semibold sm:text-base">{highlight.title}</h3>
+                <p className="mt-1 text-xs leading-relaxed text-foreground/70 sm:text-sm">
+                  {highlight.description}
+                </p>
               </div>
             </div>
           </FadeIn>
-
-          <FadeIn className="order-2 space-y-6 lg:order-1">
-            <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
-              <BadgeCheck size={16} />
-              Co-fundador da YetuStore
-            </div>
-
-            <div className="space-y-4">
-              <h2 className="max-w-2xl text-3xl font-bold leading-tight md:text-5xl">
-                Construo produto, marca e visão através da <span className="text-gradient">YetuStore</span>.
-              </h2>
-              <p className="max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-                A <span className="font-semibold text-foreground">YetuStore</span> é uma startup angolana inovadora
-                que facilita o acesso a produtos importados de qualidade, com uma experiência de compra mais prática,
-                segura e confiável.
-              </p>
-              <p className="max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-                Somos pioneiros em Angola na implementação do modelo <span className="font-semibold text-foreground">cash on delivery</span>,
-                onde o cliente paga apenas no momento da entrega.
-              </p>
-              <p className="max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-                Também criamos oportunidades com um sistema de afiliação que recompensa recomendações e fortalece uma
-                comunidade de parceiros em crescimento.
-              </p>
-            </div>
-          </FadeIn>
-        </div>
+        ))}
       </div>
     </div>
   </section>

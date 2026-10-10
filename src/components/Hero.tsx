@@ -1,116 +1,38 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Mail } from "lucide-react";
-
-const binaryColumn = `0
-1
-0
-1
-1
-0
-1
-0
-0
-1
-0
-1
-1
-0
-1
-0
-0
-1
-0
-1
-1
-0
-1
-0
-0
-1
-0
-1
-1
-0
-1
-0
-0
-1
-0
-1
-1
-0`;
-
-const columns = Array.from({ length: 18 }, (_, index) => index);
+import fotoPerfil from "@/assets/foto-perfil.jpg";
 
 const Hero = () => (
-  <section className="relative min-h-screen flex items-center section-padding pt-32">
-    <div className="binary-rain" aria-hidden="true">
-      {columns.map((index) => (
-        <span
-          key={index}
-          className="binary-column"
-          style={{
-            left: `${index * 5.5}%`,
-            animationDelay: `${-index * 0.6}s`,
-            animationDuration: `${8 + (index % 6)}s`,
-          }}
-        >
-          {binaryColumn}
-        </span>
-      ))}
+  <section className="relative flex min-h-[100dvh] items-center justify-center overflow-hidden px-4 pb-12 pt-24 md:px-8 md:pb-20">
+    <div
+      aria-hidden="true"
+      className="hero-background parallax-photo-background absolute inset-0"
+      style={{ backgroundImage: `url("${fotoPerfil}")` }}
+    >
+      <div className="hero-background-darken absolute inset-0" />
+      <div className="hero-background-shade absolute inset-0" />
     </div>
 
-    <div className="container-custom relative z-10">
-      <div className="text-center md:text-left">
+    <div className="container-custom relative z-10 w-full">
+      <div className="relative z-10 text-center md:max-w-[680px] md:py-16 md:text-left">
         <motion.p
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.2 }}
-          className="text-primary font-mono text-sm mb-4 tracking-wider"
+          className="mb-5 font-mono text-xs font-medium uppercase tracking-[0.22em] text-primary md:text-sm"
         >
-          Desenvolvedor Web & Analista de Testes
+          Desenvolvedor de Software & Analista de Testes
         </motion.p>
 
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.7 }}
-          className="text-4xl md:text-6xl font-bold leading-tight mb-6"
+          className="mb-7 text-4xl font-bold leading-[1.02] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl"
         >
           Manuel Pires{" "}
           <span className="text-gradient">Luís</span>
         </motion.h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-          className="text-muted-foreground text-lg md:text-xl max-w-lg mb-10 leading-relaxed"
-        >
-          Construo soluções web robustas, com foco em performance, qualidade e execução impecável.
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7 }}
-          className="flex flex-wrap gap-4 justify-center md:justify-start"
-        >
-          <a
-            href="#experiencia"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-primary text-primary-foreground font-medium rounded-lg hover:opacity-90 transition-opacity"
-          >
-            Ver Experiência
-            <ArrowDown size={16} />
-          </a>
-          <a
-            href="#contato"
-            className="inline-flex items-center gap-2 px-6 py-3 border border-primary/30 text-primary rounded-lg hover:bg-primary/10 transition-colors"
-          >
-            <Mail size={16} />
-            Solicitar Serviço
-          </a>
-        </motion.div>
       </div>
     </div>
   </section>
