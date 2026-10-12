@@ -82,6 +82,7 @@ const Index = () => {
         {/* The homepage is intentionally story-first: the global nav is hidden here to preserve
         the scroll narrative, while secondary routes keep their navigation for exploration. */}
         <IntroSequence />
+        <Hero />
         <div ref={storyRef} id="home-story" className="relative isolate">
           <motion.svg
             aria-hidden="true"
@@ -111,9 +112,7 @@ const Index = () => {
               className="opacity-60 md:hidden"
             />
           </motion.svg>
-
           <div className="relative">
-            <Hero />
             <About />
             <YetuStore />
             <Services />

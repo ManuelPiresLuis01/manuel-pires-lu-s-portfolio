@@ -1,5 +1,5 @@
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
-import fotoPerfil from "@/assets/foto-perfil.jpg";
+import fotoPerfil from "@/assets/imagem.png";
 import { useRef } from "react";
 
 const Hero = () => {
