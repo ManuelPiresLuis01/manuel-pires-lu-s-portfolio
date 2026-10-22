@@ -11,8 +11,9 @@ import Statistics from "@/components/Statistics";
 import Footer from "@/components/Footer";
 import IntroSequence from "@/components/IntroSequence";
 import FinalChoice from "@/components/FinalChoice";
+import ProjectInvite from "@/components/ProjectInvite";
 import { motion, useReducedMotion, useScroll } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 const seoStructuredData = [
   {
@@ -65,6 +66,7 @@ const seoStructuredData = [
 
 const Index = () => {
   const storyRef = useRef<HTMLDivElement>(null);
+  const [isProjectInviteOpen, setIsProjectInviteOpen] = useState(false);
   const reduceMotion = useReducedMotion();
   const { scrollYProgress: lineProgress } = useScroll({
     target: storyRef,
@@ -81,7 +83,11 @@ const Index = () => {
       <div className="min-h-screen bg-background">
         {/* The homepage is intentionally story-first: the global nav is hidden here to preserve
         the scroll narrative, while secondary routes keep their navigation for exploration. */}
-        <IntroSequence />
+        <IntroSequence onDismiss={() => setIsProjectInviteOpen(true)} />
+        <ProjectInvite
+          open={isProjectInviteOpen}
+          onOpenChange={setIsProjectInviteOpen}
+        />
         <Hero />
         <div ref={storyRef} id="home-story" className="relative isolate">
           <motion.svg
