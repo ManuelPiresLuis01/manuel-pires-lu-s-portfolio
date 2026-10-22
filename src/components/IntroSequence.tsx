@@ -3,7 +3,11 @@ import { useEffect, useRef, useState } from "react";
 
 const INTRO_TEXT = "Olá. Que bom ter-te por aqui.";
 
-const IntroSequence = () => {
+type IntroSequenceProps = {
+  onDismiss?: () => void;
+};
+
+const IntroSequence = ({ onDismiss }: IntroSequenceProps) => {
   const [typedText, setTypedText] = useState("");
   const [isVisible, setIsVisible] = useState(true);
   const pointerStart = useRef<{ x: number; y: number } | null>(null);
@@ -20,10 +24,17 @@ const IntroSequence = () => {
     return () => window.clearInterval(interval);
   }, [typedText]);
 
+  useEffect(() => {
+    if (!isVisible || typedText.length < INTRO_TEXT.length) return;
+
+    const timeout = window.setTimeout(() => setIsVisible(false), 900);
+    return () => window.clearTimeout(timeout);
+  }, [isVisible, typedText.length]);
+
   const dismiss = () => setIsVisible(false);
 
   return (
-    <AnimatePresence>
+    <AnimatePresence onExitComplete={onDismiss}>
       {isVisible && (
         <motion.div
           initial={{ opacity: 1 }}
@@ -69,7 +80,7 @@ const IntroSequence = () => {
               transition={{ delay: 0.7, duration: 0.45, ease: "easeOut" }}
               className="mt-8 text-sm text-muted-foreground sm:text-base"
             >
-              Desliza para baixo ou toca em qualquer lugar ↓
+              Desliza para baixo ou toca em qualquer lugar · ou aguarda ↓
             </motion.p>
           </motion.div>
         </motion.div>

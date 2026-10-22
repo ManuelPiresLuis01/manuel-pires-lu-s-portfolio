@@ -1,4 +1,5 @@
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import { ArrowDown } from "lucide-react";
 import fotoPerfil from "@/assets/imagem.png";
 import { useRef } from "react";
 
@@ -52,6 +53,29 @@ const Hero = () => {
           </motion.h1>
         </motion.div>
       </div>
+
+      <a
+        href="#home-story"
+        aria-label="Descer para explorar as outras secções"
+        className="absolute bottom-7 left-1/2 z-10 -translate-x-1/2 text-foreground/75 transition-colors hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+      >
+        <motion.span
+          animate={
+            reduceMotion
+              ? undefined
+              : {
+                  y: [0, 7, 0],
+                  color: ["hsl(var(--foreground) / 0.75)", "hsl(var(--primary))", "hsl(var(--foreground) / 0.75)"],
+                }
+          }
+          transition={reduceMotion ? undefined : { duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
+          whileHover={{ color: "hsl(var(--primary))" }}
+          className="flex flex-col items-center gap-2"
+        >
+          <span className="font-mono text-[10px] uppercase tracking-[0.2em]">Explorar</span>
+          <ArrowDown aria-hidden="true" size={20} />
+        </motion.span>
+      </a>
     </section>
   );
 };
