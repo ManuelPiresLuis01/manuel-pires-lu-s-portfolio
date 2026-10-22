@@ -9,6 +9,7 @@ import PersonalProjects from "./pages/PersonalProjects";
 import CertificationsPage from "./pages/CertificationsPage";
 import AchievementsPage from "./pages/AchievementsPage";
 import FloatingGithub from "./components/FloatingGithub";
+import CookieConsent from "./components/CookieConsent";
 
 const queryClient = new QueryClient();
 
@@ -19,6 +20,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <FloatingGithub />
+        <CookieConsent />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/personalProjects" element={<PersonalProjects />} />

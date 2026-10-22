@@ -8,8 +8,10 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip
 type Technology = {
   name: string;
   icon?: string;
+  iconUrl?: string;
   fallback: string;
   symbol?: typeof PanelsTopLeft;
+  lightIcon?: boolean;
 };
 
 const categories = [
@@ -18,6 +20,7 @@ const categories = [
     techs: [
       { name: "React", icon: "react", fallback: "" },
       { name: "TypeScript", icon: "typescript", fallback: "" },
+      { name: "JavaScript", icon: "javascript", fallback: "" },
       { name: "HTML", icon: "html5", fallback: "" },
       { name: "CSS", icon: "css3", fallback: "" },
       { name: "Styled Components", icon: "styledcomponents", fallback: "" },
@@ -29,7 +32,8 @@ const categories = [
     label: "Backend",
     techs: [
       { name: "Node.js", icon: "nodejs", fallback: "" },
-      { name: "Express", icon: "express", fallback: "" },
+      { name: "Express", icon: "express", fallback: "", lightIcon: true },
+      { name: "NestJS", icon: "nestjs", fallback: "" },
     ],
   },
   {
@@ -50,8 +54,15 @@ const categories = [
     label: "Versionamento",
     techs: [
       { name: "Git", icon: "git", fallback: "" },
-      { name: "GitHub", icon: "github", fallback: "" },
+      { name: "GitHub", icon: "github", fallback: "", lightIcon: true },
       { name: "GitLab", icon: "gitlab", fallback: "" },
+    ],
+  },
+  {
+    label: "Ferramentas e DevOps",
+    techs: [
+      { name: "CI/CD", icon: "githubactions", fallback: "" },
+      { name: "VS Code", icon: "vscode", fallback: "" },
     ],
   },
   {
@@ -118,10 +129,10 @@ const Technologies = () => {
                               {tech.fallback}
                             </span>
                             <img
-                              src={`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${tech.icon}/${tech.icon}-original.svg`}
+                              src={tech.iconUrl ?? `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${tech.icon}/${tech.icon}-original.svg`}
                               alt=""
                               loading="lazy"
-                              className="absolute h-9 w-9 object-contain"
+                              className={`absolute h-9 w-9 object-contain ${tech.lightIcon ? "brightness-0 invert" : ""}`}
                               onError={(event) => {
                                 event.currentTarget.style.display = "none";
                               }}
