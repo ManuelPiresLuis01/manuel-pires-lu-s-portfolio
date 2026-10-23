@@ -27,9 +27,9 @@ const seoStructuredData = [
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Manuel Pires Luis",
-    alternateName: ["Manuel Pires Luís", "Manuel Pires Luis Developer", "Manuel Dev"],
+    alternateName: ["Manuel Pires Luís", "Manuel Pires Luis Developer", "Manuel Dev", "Dev Manuel"],
     url: "https://www.manuelpiresluis.site/",
-    image: "https://www.manuelpiresluis.site/foto-perfil.jpg",
+    image: "https://www.manuelpiresluis.site//imagem.png",
     jobTitle: "Software Developer and QA Engineer",
     description:
       "Software Developer and QA Engineer focused on TypeScript, Playwright, test automation, quality assurance and remote product teams.",
@@ -56,11 +56,11 @@ const seoStructuredData = [
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Manuel Pires Luis | Web Developer & QA Engineer",
+    name: "Manuel Pires Luis | Software Developer & QA Engineer",
     url: "https://www.manuelpiresluis.site/",
     description:
-      "Portfolio website of Manuel Pires Luis, a Web Developer and QA Engineer available for remote roles and freelance work.",
-    primaryImageOfPage: "https://www.manuelpiresluis.site/foto-perfil.jpg",
+      "Software Developer and QA Engineer portfolio. Manuel Pires Luis builds reliable web products with React, TypeScript, Playwright and modern testing for remote teams and freelance clients.",
+    primaryImageOfPage: "https://www.manuelpiresluis.site/imagem.png",
   },
 ];
 
@@ -76,8 +76,8 @@ const Index = () => {
   return (
     <>
       <SiteSEO
-        title="Manuel Pires Luis | Web Developer & QA Engineer"
-        description="Web Developer and QA Engineer portfolio. Manuel Pires Luis builds reliable web products with React, TypeScript, Playwright and modern testing for remote teams and freelance clients."
+        title="Manuel Pires Luis | Software Developer & QA Engineer"
+        description="Software Developer and QA Engineer portfolio. Manuel Pires Luis builds reliable web products with React, TypeScript, Playwright and modern testing for remote teams and freelance clients."
         structuredData={seoStructuredData}
       />
       <div className="min-h-screen bg-background">
