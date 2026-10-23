@@ -1,4 +1,5 @@
-import { Github, Linkedin, Mail, MessageCircle } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import { motion, useReducedMotion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
@@ -29,12 +30,12 @@ const contactLinks = [
     href: "https://wa.me/244929004469?text=Ol%C3%A1%2C%20estou%20entrando%20em%20contato%20via%20portf%C3%B3lio",
     label: "Contactar Manuel Pires Luís pelo WhatsApp",
     tooltip: "WhatsApp",
-    icon: MessageCircle,
+    icon: FaWhatsapp,
     external: true,
   },
 ];
 
-const FloatingGithub = () => {
+const FloatingLinks = () => {
   const [orderedLinks, setOrderedLinks] = useState(contactLinks);
   const reduceMotion = useReducedMotion();
 
@@ -82,4 +83,4 @@ const FloatingGithub = () => {
   );
 };
 
-export default FloatingGithub;
+export default FloatingLinks;
