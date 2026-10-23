@@ -39,7 +39,7 @@ const SEO = ({
   title,
   description,
   path = "/",
-  image = `${SITE_URL}/foto-perfil.jpg`,
+  image = `${SITE_URL}/imagem.png`,
   noindex = false,
   structuredData,
 }: SEOProps) => {

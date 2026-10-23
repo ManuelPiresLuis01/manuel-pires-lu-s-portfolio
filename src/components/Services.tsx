@@ -12,12 +12,12 @@ const services = [
   {
     label: "02",
     icon: Code2,
-    title: "Refatoração",
+    title: "Refatoração de Código",
   },
   {
     label: "03",
     icon: Globe,
-    title: "Web & Sistemas",
+    title: "Desenvolvimento de Software",
   },
   {
     label: "04",
