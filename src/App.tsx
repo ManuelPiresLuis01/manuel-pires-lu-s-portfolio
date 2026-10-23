@@ -8,7 +8,7 @@ import NotFound from "./pages/NotFound";
 import PersonalProjects from "./pages/PersonalProjects";
 import CertificationsPage from "./pages/CertificationsPage";
 import AchievementsPage from "./pages/AchievementsPage";
-import FloatingGithub from "./components/FloatingGithub";
+import FloatingLinks from "./components/FloatingLinks";
 import CookieConsent from "./components/CookieConsent";
 
 const queryClient = new QueryClient();
@@ -19,7 +19,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <FloatingGithub />
+        <FloatingLinks />
         <CookieConsent />
         <Routes>
           <Route path="/" element={<Index />} />

@@ -29,7 +29,7 @@ const seoStructuredData = [
     name: "Manuel Pires Luis",
     alternateName: ["Manuel Pires Luís", "Manuel Pires Luis Developer", "Manuel Dev", "Dev Manuel"],
     url: "https://www.manuelpiresluis.site/",
-    image: "https://www.manuelpiresluis.site//imagem.png",
+    image: "https://www.manuelpiresluis.site/imagem.png",
     jobTitle: "Software Developer and QA Engineer",
     description:
       "Software Developer and QA Engineer focused on TypeScript, Playwright, test automation, quality assurance and remote product teams.",
