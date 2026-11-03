@@ -18,7 +18,7 @@ const About = () => (
         <FadeIn delay={0.2}>
           <div className="max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
             <p>
-              Sou desenvolvedor de software e analista de testes. Trabalho com
+              Sou desenvolvedor de software e Analista Sénior de Testes. Trabalho com
               desenvolvimento web e automação de testes, procurando sempre
               aprender, colaborar e entregar experiências digitais de qualidade.
             </p>

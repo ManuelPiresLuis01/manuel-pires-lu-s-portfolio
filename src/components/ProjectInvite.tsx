@@ -1,7 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, X } from "lucide-react";
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
 
 type ProjectInviteProps = {
   open: boolean;
@@ -59,13 +58,13 @@ const ProjectInvite = ({ open, onOpenChange }: ProjectInviteProps) => {
           <p id="project-invite-description" className="mt-1 text-xs leading-relaxed text-muted-foreground">
             Tenho alguns projectos interessantes para te mostrar.
           </p>
-          <Link
-            to="/personalProjects"
+          <a
+            href="/personalProjects"
             className="mt-3 inline-flex min-h-9 items-center justify-center gap-1.5 rounded-lg bg-primary px-3.5 py-2 text-xs font-medium text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
           >
             Explorar projectos
             <ArrowRight aria-hidden="true" size={14} />
-          </Link>
+          </a>
         </motion.aside>
       )}
     </AnimatePresence>

@@ -11,7 +11,7 @@ const PersonalProjects = () => (
       description="Projectos pessoais, aplicações e websites desenvolvidos por Manuel Pires Luís."
       path="/personalProjects"
     />
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background text-foreground">
       <BackToHome />
       <main>
         <CorporateProjects />

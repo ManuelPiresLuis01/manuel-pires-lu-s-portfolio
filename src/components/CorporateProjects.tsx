@@ -31,7 +31,7 @@ const CorporateProjects = () => (
 
             <h3 className="mb-2 text-lg font-semibold">Mamboo Tecnologia</h3>
             <p className="mb-5 text-sm leading-relaxed text-muted-foreground">
-              Atuei como Desenvolvedor Frontend e Analista de Testes em
+              Atuei como Desenvolvedor Frontend e Analista Sénior de Testes em
               produtos digitais de alta escala, contribuindo no desenvolvimento,
               validação e evolução de sistemas internos e externos da
               plataforma.
@@ -61,7 +61,7 @@ const CorporateProjects = () => (
             </div>
             <h3 className="mb-2 text-lg font-semibold">TIS Tech Angola</h3>
             <p className="mb-5 text-sm leading-relaxed text-muted-foreground">
-              Atuo como Analista de Testes Automatizados na TIS Tech Angola, garantindo a qualidade, a fiabilidade e a estabilidade dos sistemas da AGT e do INAGBE.
+              Atuo como Analista Sénior de Testes Automatizados na TIS Tech Angola, garantindo a qualidade, a fiabilidade e a estabilidade dos sistemas da AGT e do INAGBE.
             </p>
           </article>
         </FadeIn>

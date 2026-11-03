@@ -10,7 +10,7 @@ const AchievementsPage = () => (
       description="Momentos marcantes, palestras e conquistas de Manuel Pires Luís."
       path="/moments"
     />
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background text-foreground">
       <BackToHome />
       <main>
         <Achievements />
