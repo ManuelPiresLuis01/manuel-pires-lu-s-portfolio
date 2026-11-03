@@ -39,7 +39,7 @@ const Hero = () => {
             transition={{ delay: 0.2, duration: 0.7 }}
             className="mb-4 font-mono text-[0.62rem] font-medium uppercase tracking-[0.24em] text-primary md:text-xs"
           >
-            Desenvolvedor de Software & Analista de Testes
+            Desenvolvedor de Software & Analista Sénior de Testes
           </motion.p>
 
           <motion.h1

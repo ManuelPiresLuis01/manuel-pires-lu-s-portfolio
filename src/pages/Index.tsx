@@ -7,11 +7,13 @@ import Timeline from "@/components/Timeline";
 import Technologies from "@/components/Technologies";
 import Contact from "@/components/Contact";
 import Certifications from "@/components/Certifications";
+import SpeakingCommunity from "@/components/SpeakingCommunity";
 import Statistics from "@/components/Statistics";
 import Footer from "@/components/Footer";
 import IntroSequence from "@/components/IntroSequence";
 import FinalChoice from "@/components/FinalChoice";
 import ProjectInvite from "@/components/ProjectInvite";
+import SectionNavigation from "@/components/SectionNavigation";
 import { motion, useReducedMotion, useScroll } from "framer-motion";
 import { useRef, useState } from "react";
 
@@ -81,6 +83,7 @@ const Index = () => {
         structuredData={seoStructuredData}
       />
       <div className="min-h-screen bg-background">
+        <SectionNavigation />
         {/* The homepage is intentionally story-first: the global nav is hidden here to preserve
         the scroll narrative, while secondary routes keep their navigation for exploration. */}
         <IntroSequence onDismiss={() => setIsProjectInviteOpen(true)} />
@@ -124,6 +127,7 @@ const Index = () => {
             <Services />
             <Timeline />
             <Certifications />
+            <SpeakingCommunity />
             <Technologies />
             <Statistics />
             <Contact />

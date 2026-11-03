@@ -1,5 +1,4 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { Cookie } from "lucide-react";
 import { useEffect, useState } from "react";
 
 type ConsentChoice = "accepted" | "declined";
@@ -71,20 +70,6 @@ const CookieConsent = () => {
 
   return (
     <>
-      {choice !== null && choice !== "loading" && (
-        <button
-          type="button"
-          onClick={() => {
-            const secure = window.location.protocol === "https:" ? "; Secure" : "";
-            document.cookie = `${consentCookie}=; Max-Age=0; Path=/; SameSite=Lax${secure}`;
-            setChoice(null);
-          }}
-          className="fixed bottom-3 left-3 z-[79] inline-flex min-h-10 items-center gap-2 rounded-full border border-border bg-card/85 px-4 py-2 text-xs font-medium text-muted-foreground shadow-lg backdrop-blur-md transition-colors hover:border-primary/50 hover:bg-primary/10 hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-        >
-          <Cookie aria-hidden="true" size={15} />
-          Preferências de cookies
-        </button>
-      )}
       <AnimatePresence>
         {choice === null && (
           <motion.aside
