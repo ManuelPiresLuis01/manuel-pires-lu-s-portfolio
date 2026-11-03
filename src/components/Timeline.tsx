@@ -21,12 +21,12 @@ const items = [
   { year: "2025", title: "Frontend Developer & QA", desc: "Mamboo Tecnologia" },
   {
     year: "2025",
-    title: "Analista de Testes Automatizados",
+    title: "Analista Sénior de Testes Automatizados",
     desc: "TIS Tech – Projeto AGT 4.0",
   },
   {
     year: "2026",
-    title: "Analista de Testes Automatizados",
+    title: "Analista Sénior de Testes Automatizados",
     desc: "TIS Tech – Projeto INAGBE",
   },
   {
