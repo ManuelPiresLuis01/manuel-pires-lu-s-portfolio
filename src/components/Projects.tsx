@@ -11,6 +11,7 @@ import {
 
 const categories = [
   "Todos",
+  "Destaques",
   "E-commerce",
   "Segurança digital",
   "Educação",
@@ -24,7 +25,7 @@ type Project = {
   desc: string;
   tech: string[];
   link: string | null;
-  category: Exclude<ProjectCategory, "Todos">;
+  category: Exclude<ProjectCategory, "Todos" | "Destaques">;
   preview?: boolean;
   featured?: boolean;
   npmPackage?: boolean;
@@ -125,6 +126,8 @@ const Projects = () => {
   const filteredProjects =
     activeCategory === "Todos"
       ? projects
+      : activeCategory === "Destaques"
+        ? projects.filter((project) => project.featured)
       : projects.filter((project) => project.category === activeCategory);
   const totalPages = Math.ceil(filteredProjects.length / projectsPerPage);
   const visibleProjects = filteredProjects.slice(
